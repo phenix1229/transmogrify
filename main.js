@@ -40,9 +40,11 @@ const crazify = function(str) {
     if (spaceCount % 2 === 1 && letter !== ' '){
       crazyStr+= letter.toUpperCase();
       spaceCount++;
-    } else if (spaceCount % 2 === 0 || letter === ' '){
+    } else if (spaceCount % 2 === 0 && letter !== ' '){
       crazyStr+= letter;
       spaceCount++;
+    } else if (letter === ' '){
+      crazyStr+= letter
     }
   }
   return crazyStr;
